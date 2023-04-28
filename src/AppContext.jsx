@@ -5,10 +5,12 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
 
+	const specialDealMessage = "Get free popcorn with every Star Wars movie.";
+
 	return (
 		<AppContext.Provider
 			value={{
-				
+				specialDealMessage
 			}}
 		>
 			{children}

@@ -1,7 +1,13 @@
+import { useContext } from 'react';
+import { AppContext } from '../AppContext';
+
 export const PageWelcome = () => {
+	const {specialDealMessage} = useContext(AppContext);
+
 	return (
 		<div className="page pageWelcome">
-			<p>This is the Welcome page.</p>
+			<h2>Special Deal</h2>
+			<p>{specialDealMessage}</p>
 		</div>
 	);
 };
