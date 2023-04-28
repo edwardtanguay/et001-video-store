@@ -14,7 +14,20 @@ export const AppProvider = ({ children }) => {
 	const handleSearchTextChange = (e) => {
 		const _searchText = e.target.value;
 		setSearchText(_searchText);
-	}
+
+		const url = `http://www.omdbapi.com/?s=${_searchText}&apikey=c3b5f302`;
+
+		(async () => {
+			const response = await fetch(url);
+			const data = await response.json();
+			let _films = data.Search;
+			if (_films === undefined) {
+				_films = [];
+			}
+			console.log(_films);
+			setFilms(_films);
+		})();
+	};
 
 	return (
 		<AppContext.Provider

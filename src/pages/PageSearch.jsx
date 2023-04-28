@@ -14,7 +14,7 @@ export const PageSearch = () => {
 				{films.map((film, i) => {
 					return (
 						<div className="film" key={i}>
-							<div className="title">{film.title}</div>
+							<div className="title">{film.Title}</div>
 						</div>
 					)
 				})}
