@@ -20,7 +20,6 @@ export const AppProvider = ({ children }) => {
 			if (_films === undefined) {
 				_films = [];
 			}
-			console.log(_films);
 			setFilms(_films);
 		})();
 
