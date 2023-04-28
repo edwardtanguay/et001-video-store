@@ -5,8 +5,21 @@ import { createContext } from 'react';
 
 export const AppContext = createContext();
 
+const _dummyFilms = [
+	{
+		title: 'aaa'
+	},
+	{
+		title: 'bbb'
+	},
+	{
+		title: 'ccc'
+	}
+]
+
 export const AppProvider = ({ children }) => {
 	const [searchText, setSearchText] = useState('');
+	const [films, setFilms] = useState(_dummyFilms);
 
 	const specialDealMessage = "Get free popcorn with every Star Wars movie.";
 
@@ -20,7 +33,8 @@ export const AppProvider = ({ children }) => {
 			value={{
 				specialDealMessage,
 				handleSearchTextChange,
-				searchText
+				searchText,
+				films
 			}}
 		>
 			{children}

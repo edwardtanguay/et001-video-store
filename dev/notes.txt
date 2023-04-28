@@ -2,8 +2,8 @@
 	- Welcome
 	- Search
 	- About
-- .. set up useContext
-	- .. show special deal message on welcome and search pages
-	
+- x set up useContext
+	- x show special deal message on welcome and search pages
+- .. show dummy film list	
 	
 	 
