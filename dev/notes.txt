@@ -1,0 +1,5 @@
+- .. React Router: 3 pages: 
+	- Welcome
+	- Search
+	- About
+- set up useContext
