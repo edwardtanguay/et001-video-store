@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createContext } from 'react';
 
 export const AppContext = createContext();
@@ -11,12 +11,8 @@ export const AppProvider = ({ children }) => {
 
 	const specialDealMessage = "Get free popcorn with every Star Wars movie.";
 
-	const handleSearchTextChange = (e) => {
-		const _searchText = e.target.value;
-		setSearchText(_searchText);
-
-		const url = `http://www.omdbapi.com/?s=${_searchText}&apikey=c3b5f302`;
-
+	useEffect(() => {
+		const url = `http://www.omdbapi.com/?s=${searchText}&apikey=c3b5f302`;
 		(async () => {
 			const response = await fetch(url);
 			const data = await response.json();
@@ -27,6 +23,13 @@ export const AppProvider = ({ children }) => {
 			console.log(_films);
 			setFilms(_films);
 		})();
+
+	}, [searchText]);
+
+
+	const handleSearchTextChange = (e) => {
+		const _searchText = e.target.value;
+		setSearchText(_searchText);
 	};
 
 	return (
