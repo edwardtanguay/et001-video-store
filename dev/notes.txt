@@ -1,5 +1,8 @@
-- .. React Router: 3 pages: 
+- x React Router: 3 pages: 
 	- Welcome
 	- Search
 	- About
-- set up useContext
+- .. set up useContext
+	- .. show special deal message on welcome and search pages
+	
+	 
